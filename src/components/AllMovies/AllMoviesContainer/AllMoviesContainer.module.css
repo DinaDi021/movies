@@ -1,0 +1,65 @@
+.container {
+    width: 20%;
+    margin: 20px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.container:hover .stars{
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*.info{*/
+/*    width: 50%;*/
+/*    position: absolute;*/
+/*    bottom: 3px;*/
+/*}*/
+/*.imageDiv{*/
+/*    position: relative;*/
+/*}*/
+
+.image {
+    width: 15vw;
+    height: 40vh;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+.wrapper {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/*.containerBtn{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+
+.stars{
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    background-color: white;
+    padding: 5px 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    transform: translateY(100%);
+}
+
+/*html[data-theme='dark'] .stars span {*/
+/*    color: black;*/
+/*}*/

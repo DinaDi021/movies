@@ -1,0 +1,5 @@
+export * from './moviesSlice'
+export * from './genresSlice'
+export * from './progressSlice'
+export * from './searchMoviesSlice'
+export * from './categoriesMoviesSlice'
