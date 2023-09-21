@@ -1,0 +1,59 @@
+.container{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    margin: 10px;
+    padding: 0 20px;
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+    background-color: lavender;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #8a8ad3;
+}
+
+.container h3{
+    margin: 0;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+html[data-theme='light'] .container h3 {
+    color: #a8a8ec;
+    background-color: #ffffff;
+}
+
+html[data-theme='dark'] .container h3 {
+    color: lavender;
+    background-color: #a8a8ec;
+}
+
+html[data-theme='light'] .container h4 {
+    color: #30124d;
+}
+
+html[data-theme='dark'] .container h4 {
+    color: lavender;
+}
+
+
+.UpcomingCard{
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.UpcomingCard h4{
+    margin: 10px 0;
+}
+
+.UpcomingCard img{
+    width: 10vw;
+}

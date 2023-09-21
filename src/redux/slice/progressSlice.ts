@@ -7,7 +7,7 @@ interface Istate{
 const initialState: Istate = {
     isLoading: false
 };
-const slice = createSlice({
+const progressSlice = createSlice({
     name: 'progressSlice',
     initialState,
     reducers: {
@@ -17,7 +17,7 @@ const slice = createSlice({
     }
 });
 
-const {reducer: progressReducer, actions: progressActions} = slice;
+const {reducer: progressReducer, actions: progressActions} = progressSlice;
 
 export {
     progressActions,

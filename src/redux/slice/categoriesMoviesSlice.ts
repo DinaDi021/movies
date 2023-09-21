@@ -7,16 +7,16 @@ import {AxiosError} from "axios";
 
 interface IState {
     popularMovies: IMovie[],
-    topRated: IMovie[],
-    upcoming: IMovie[]
+    topRatedMovies: IMovie[],
+    upcomingMovies: IMovie[]
     page: number,
     totalPages: number,
 }
 
 const initialState: IState = {
     popularMovies: [],
-    topRated: [],
-    upcoming: [],
+    topRatedMovies: [],
+    upcomingMovies: [],
     page: 0,
     totalPages: 0,
 }
@@ -102,17 +102,17 @@ const categoriesMoviesSlice = createSlice({
             state.totalPages = total_pages
             state.popularMovies = results
         })
-        .addCase(getPopularMovies.fulfilled, (state, action) => {
+        .addCase(getUpcomingMovies.fulfilled, (state, action) => {
             const {page, total_pages, results} = action.payload;
             state.page = page
             state.totalPages = total_pages
-            state.popularMovies = results
+            state.upcomingMovies = results
         })
-        .addCase(getPopularMovies.fulfilled, (state, action) => {
+        .addCase(getTopRatedMovies.fulfilled, (state, action) => {
             const {page, total_pages, results} = action.payload;
             state.page = page
             state.totalPages = total_pages
-            state.popularMovies = results
+            state.topRatedMovies = results
         })
 })
 

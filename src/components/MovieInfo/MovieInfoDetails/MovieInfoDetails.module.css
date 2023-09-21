@@ -1,0 +1,50 @@
+.filmCard {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.filmInfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filmInfo h2, h4, p{
+    margin: 0 0 10px 0;
+}
+
+.filmImg {
+    height: 70vh;
+}
+
+.containerVideo {
+    width: 34vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerVideo iframe {
+    margin: 0 20px 10px 0;
+}
+
+.containerBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.GenreBadge {
+    width: 510px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.GenreBadge button{
+    margin: 0;
+}
+

@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 import styles from './Header.module.css'
 
 import {useAppDispatch, useAppLocation} from "../../hooks";
-import {genreActions, moviesActions} from "../../redux";
+import {genreActions, moviesActions, searchMoviesActions} from "../../redux";
+import {SwitchTheme} from "../SwitchTheme";
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -11,7 +12,7 @@ const Header = () => {
     const handleMoviesClick = () => {
         dispatch(genreActions.clearGenre());
         dispatch(moviesActions.clearSort())
-        // dispatch(searchMoviesActions.clearSearchMovies())
+        dispatch(searchMoviesActions.clearSearchMovies())
     };
 
     return (
@@ -36,6 +37,7 @@ const Header = () => {
             >
                 Search
             </Link>
+            <SwitchTheme/>
             {/*<UserInfo/>*/}
         </div>
     );

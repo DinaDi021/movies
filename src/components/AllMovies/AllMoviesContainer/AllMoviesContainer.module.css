@@ -10,14 +10,14 @@
     transform: translateY(0);
 }
 
-/*.info{*/
-/*    width: 50%;*/
-/*    position: absolute;*/
-/*    bottom: 3px;*/
-/*}*/
-/*.imageDiv{*/
-/*    position: relative;*/
-/*}*/
+.info{
+    width: 50%;
+    position: absolute;
+    bottom: 3px;
+}
+.imageDiv{
+    position: relative;
+}
 
 .image {
     width: 15vw;

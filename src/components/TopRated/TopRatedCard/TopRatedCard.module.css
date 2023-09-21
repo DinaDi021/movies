@@ -1,0 +1,55 @@
+.wrapper {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.containerFilm{
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+    flex-wrap: wrap;
+}
+
+.image{
+    width: 15vw;
+    height: 40vh;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    padding: 15px 0;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+.CardFilm {
+    width: 25%;
+}
+
+.CardFilm h3 {
+    margin: 10px;
+}
+
+.btnSort{
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+.containerBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btnPage:disabled{
+    opacity: 0.2;
+}

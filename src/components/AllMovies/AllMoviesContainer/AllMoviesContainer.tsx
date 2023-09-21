@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import styles from './AllMoviesContainer.module.css'
 
-
+import empty from '../../../assets/img/empty.jpg'
 import {useAppDispatch} from "../../../hooks";
 import {moviesActions} from "../../../redux";
 import {IMovie} from "../../../interfaces";
@@ -30,7 +30,7 @@ const AllMoviesContainer: FC<IProps> = ({movie}) => {
         <div className={styles.container}>
             <Link to={`/movie/${id}`} onClick={handleMovieClick}>
                 <div>
-                    <img className={styles.image} src={ imageURL } alt={title}/>
+                    <img className={styles.image} src={ poster_path? imageURL: empty } alt={title}/>
                     <div className={styles.stars}>
                         <StarRating value={vote_average}/>
                         <span style={{marginLeft: '10px'}}>{vote_average}</span>

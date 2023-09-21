@@ -1,7 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
 
-import {categoriesMoviesReducer, genreReducer, moviesReducer, progressReducer, searchMoviesReducer} from "./slice";
-import {creditsReducer} from "./slice/creditsSlice";
+import {
+    categoriesMoviesReducer,
+    creditsReducer,
+    genreReducer,
+    moviesReducer,
+    progressReducer,
+    searchMoviesReducer, themeReducer
+} from "./slice";
 
 
 const store = configureStore({
@@ -11,7 +17,8 @@ const store = configureStore({
         progress: progressReducer,
         credits: creditsReducer,
         searchMovies: searchMoviesReducer,
-        categoriesMovies: categoriesMoviesReducer
+        categoriesMovies: categoriesMoviesReducer,
+        themeSwitch: themeReducer
     }
 });
 
