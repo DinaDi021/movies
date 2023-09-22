@@ -3,7 +3,7 @@ import {urls} from "../constants";
 import {IMovie, IPagination, IRes} from "../interfaces";
 
 const moviesService = {
-    getAll: (page: number, genreId:number, sorted: string):IRes<IPagination<IMovie>> => apiService.get(urls.movies, {
+    getAll: (page: number, genreId:string, sorted: string):IRes<IPagination<IMovie>> => apiService.get(urls.movies, {
         params: {
             page,
             with_genres: genreId,

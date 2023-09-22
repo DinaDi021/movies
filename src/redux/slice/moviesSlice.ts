@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
 
-import {IMovie, IPagination} from "../../interfaces";
+import {IMovie, IPagination, QueryParams} from "../../interfaces";
 import {moviesService} from "../../services";
 import {progressActions} from "./progressSlice";
 
@@ -20,20 +20,20 @@ const initialState: IState = {
     movieByid: null,
     selectedMovie: savedMovie ? JSON.parse(savedMovie) : null,
     selectedSortBy: null,
-    page: 0,
+    page: 1,
     totalPages: 0,
 }
 
 const getMovies = createAsyncThunk<
     IPagination<IMovie>,
-    { page: number; genreId: number; sorted: string }
+    { query: QueryParams }
 >(
     'moviesSlice/getMovies',
-    async ({page, genreId, sorted}, {rejectWithValue, dispatch}) => {
+    async ({query}, {rejectWithValue, dispatch}) => {
         try {
             dispatch(progressActions.setIsLoading(true))
-            const response = await moviesService.getAll(page, genreId, sorted);
-            const {total_pages, results} = response.data;
+            const response = await moviesService.getAll(query.page, query.genreId, query.sorted);
+            const {page, total_pages, results} = response.data;
             dispatch(moviesActions.setTotalPages(total_pages));
             return {
                 page,
@@ -97,7 +97,7 @@ const moviesSlice = createSlice({
                 case "release_date.desc":
                     state.movies = [...state.movies].sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date));
                     break;
-                case "none":
+                case "without_sorting":
                     state.selectedSortBy = null;
                     break;
                 default:
@@ -105,7 +105,7 @@ const moviesSlice = createSlice({
             }
         },
         clearSort: (state) => {
-            state.selectedSortBy = null;
+            state.selectedSortBy = "popularity.desc";
         },
     },
     extraReducers: builder => builder

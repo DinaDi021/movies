@@ -1,5 +1,3 @@
-import {useSelector} from "react-redux";
-
 import styles from './MoviesPage.module.css'
 import {AllMovies, Genre, GenreFilter, Paginations, SortComponent} from "../../components";
 import {useAppSelector} from "../../hooks";

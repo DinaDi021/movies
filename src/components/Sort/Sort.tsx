@@ -40,7 +40,7 @@ const SortComponent = () => {
                     onChange={handleSortChange}
                     value={selectedSortBy || ""}
                 >
-                    <MenuItem value="None">None</MenuItem>
+                    <MenuItem value="without_sorting">Without sorting</MenuItem>
                     <MenuItem value="popularity.asc">Popularity <ArrowUpwardIcon></ArrowUpwardIcon> </MenuItem>
                     <MenuItem value="popularity.desc">Popularity <ArrowDownwardIcon></ArrowDownwardIcon></MenuItem>
                     <MenuItem value="vote_average.asc">Vote Average <ArrowUpwardIcon></ArrowUpwardIcon></MenuItem>
