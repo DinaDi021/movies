@@ -9,6 +9,7 @@ import {searchService} from "../../services";
 interface IState {
     searchMovies: IMovie[],
     titleMovie: string,
+    titleMovieError: string,
     page: number,
     totalPages: number
 }
@@ -16,6 +17,7 @@ interface IState {
 const initialState: IState = {
     searchMovies: [],
     titleMovie: '',
+    titleMovieError: null,
     page: 0,
     totalPages: 0
 }
@@ -54,10 +56,16 @@ const searchMoviesSlice = createSlice({
         },
         setTitleMovie: (state, action) => {
             state.titleMovie = action.payload;
+            state.titleMovieError = null;
+        },
+        setTitleMovieError: (state, action) => {
+            state.titleMovieError = action.payload;
+
         },
         clearSearchMovies: (state) => {
             state.searchMovies = [];
-            state.titleMovie = null
+            state.titleMovie = null;
+            state.titleMovieError = null;
             state.totalPages = 0
         },
     },

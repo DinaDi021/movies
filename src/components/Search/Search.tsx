@@ -14,19 +14,17 @@ import {IsLoading} from "../IsLoading";
 const Search = () => {
     const dispatch = useAppDispatch();
     const {isLoading} = useAppSelector(state => state.progress)
-    const {searchMovies, titleMovie, totalPages} = useAppSelector(state => state.searchMovies);
-    const [query, setQuery] = useSearchParams({page: '1', query: ''})
+    const {searchMovies, titleMovie, totalPages, titleMovieError} = useAppSelector(state => state.searchMovies);
+    const [query, setQuery] = useSearchParams({page: '1'})
     const page = +query.get('page');
     const name = query.get('query')
 
     useEffect(() => {
-        if (page && name) {
             dispatch(searchMoviesActions.setTitleMovie(name));
             dispatch(searchMoviesActions.getSearchMovies({
                 query: name,
                 page
             }));
-        }
     }, [dispatch, page, name]);
 
 
@@ -36,6 +34,14 @@ const Search = () => {
 
     const handleSearchSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
+
+        if (!titleMovie) {
+            dispatch(searchMoviesActions.clearSearchMovies());
+            dispatch(searchMoviesActions.setTitleMovieError('Please enter a title movie'));
+            setQuery();
+            return;
+        }
+
         setQuery({page: '1', query: titleMovie});
         dispatch(searchMoviesActions.getSearchMovies({
             page: 1,
@@ -72,14 +78,17 @@ const Search = () => {
                         </IconButton>
                         <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
                     </Paper>
+                    {titleMovieError ? (
+                        <div className={styles.error}>{titleMovieError}</div>
+                    ) : (
+                        <div className={styles.searchMovies}>
+                            {searchMovies.map((searchMovie) => (
+                                <SearchMovies key={searchMovie.id} searchMovie={searchMovie}/>
+                            ))}
+                        </div>
+                    )}
                 </div>
-            )}
-
-            <div className={styles.searchMovies}>
-                {searchMovies.map((searchMovie) => (
-                    <SearchMovies key={searchMovie.id} searchMovie={searchMovie}/>
-                ))}
-            </div>
+            )} {titleMovie &&
             <div>
                 <Pagination
                     count={totalPages}
@@ -89,6 +98,7 @@ const Search = () => {
                     onChange={handlePageChange}
                 />
             </div>
+        }
         </div>
     );
 }
