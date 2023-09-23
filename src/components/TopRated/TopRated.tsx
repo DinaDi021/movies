@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
 
-import styles from "./TopRatedCard/TopRatedCard.module.css";
+import styles from '../AllMovies/AllMoviesContainer/AllMoviesContainer.module.css'
 
-import {TopRatedCard} from "./TopRatedCard/TopRatedCard";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {categoriesMoviesActions} from "../../redux";
 import {IsLoading} from "../IsLoading";
+import {AllMoviesContainer} from "../AllMovies";
 
 const TopRated = () => {
     const dispatch = useAppDispatch();
@@ -25,11 +25,9 @@ const TopRated = () => {
                 <IsLoading />
             ) : (
                 <div className={styles.wrapper}>
-                    <div className={styles.containerFilm}>
-                        {topRatedMovies.map((topRat) => (
-                            <TopRatedCard key={topRat.id} topRat={topRat}/>
+                        {topRatedMovies.map((movie) => (
+                            <AllMoviesContainer key={movie.id} movie={movie}/>
                         ))}
-                    </div>
                 </div>
                 )}
         </div>

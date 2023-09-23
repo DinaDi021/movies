@@ -1,3 +1,16 @@
+:root{
+  --basic-white: #FFFFFF;
+  --basic-black: #000000;
+
+  --bright: #C0EAEE;
+
+  --turquoise: rgba(103, 236, 255, 0.67);
+  --emerald: #005B64;
+
+  --darkGreen: #164044;
+  --dark: #003237;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -6,12 +19,12 @@ body {
 
   &::-webkit-scrollbar{
     width: 10px;
-    background-color: lavender;
+    background-color:var(--bright);
 
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #8a8ad3;
+    background-color: var(--emerald);
     border-radius: 10px;
   }
 }
@@ -30,7 +43,7 @@ button {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  color: white;
+  color: var(--basic-white);
   transition: 0.5s;
 
   &:disabled{
@@ -56,23 +69,24 @@ button {
 }
 
 html[data-theme='dark'] {
-  background-color: #1a0b25;
-  color: white;
+  background-color: var(--dark);
+  color: var(--basic-white);
 
   .footer{
-    background-color: #30124d;
+    background-color: var(--dark);
   }
 
   button {
-    background-color: #30124d;
+    background-color: var(--darkGreen);
+    color: var(--bright);
 
     &:hover {
-      background-color: #4c4c9f;
+      background-color: var(--turquoise);
     }
   }
 
   .active-button {
-    background-color: #4c4c9f;
+    background-color: var(--turquoise);
   }
 }
 
@@ -80,18 +94,21 @@ html[data-theme='light'] {
   background-color: white;
 
   .footer{
-    background-color: lavender;
+    background-color: var(--bright);
   }
 
   button {
-    background-color: lavender;
+    background-color: var(--bright);
+    color: var(--dark);
 
     &:hover {
-      background-color: #8a8ad3;
+      background-color: var(--emerald);
+      color: var(--bright);
     }
   }
 
   .activeButton {
-    background-color: #8a8ad3;
+    background-color: var(--emerald);
+    color: var(--bright);
   }
 }

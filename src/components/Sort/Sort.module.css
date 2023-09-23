@@ -8,3 +8,11 @@
 .sortDiv  div{
     display: flex;
 }
+
+#demo-simple-select-label {
+    color: var(--darkGreen) !important;
+}
+
+#demo-simple-select {
+    color: var(--darkGreen) !important;
+}

@@ -39,12 +39,12 @@ const SwitchTheme = () => {
                 },
                 '& + .MuiSwitch-track': {
                     opacity: 1,
-                    backgroundColor: theme.palette.mode === 'dark' ? '#f2f2fd' : '#b0b0de',
+                    backgroundColor: theme.palette.mode === 'dark' ? '#f2f2fd' : 'rgba(103, 236, 255, 0.67)',
                 },
             },
         },
         '& .MuiSwitch-thumb': {
-            backgroundColor: theme.palette.mode === 'dark' ? '#4c4c9f' : '#8a8ad3',
+            backgroundColor: theme.palette.mode === 'dark' ? '#164044' : '#005B64',
             width: 32,
             height: 32,
             '&:before': {

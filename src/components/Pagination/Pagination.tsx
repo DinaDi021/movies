@@ -32,7 +32,6 @@ const Paginations: React.FC<PaginationsProps> = ({totalPages}) => {
                 count={totalPages > 500 ? 500 : totalPages}
                 page={+currentPage}
                 variant="outlined"
-                color="secondary"
                 onChange={handlePageChange}/>
         </div>
     );

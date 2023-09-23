@@ -1,3 +1,5 @@
 export * from './Upcoming'
-export * from './UpcomingCard/UpcomingCard'
-export * from './UpcomingCard/UpcomingCard.module.css'
+export * from './UpcomingDirections/UpcomingPage'
+export * from './UpcomingDirections/UpcomingPreview'
+export * from './UpcomingDirections/UpcomingCard/UpcomingCard'
+export * from './UpcomingDirections/UpcomingCard/UpcomingCard.module.css'

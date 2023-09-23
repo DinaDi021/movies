@@ -94,7 +94,6 @@ const Search = () => {
                     count={totalPages}
                     page={+page}
                     variant="outlined"
-                    color="secondary"
                     onChange={handlePageChange}
                 />
             </div>

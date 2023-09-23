@@ -4,7 +4,7 @@ interface Istate{
     currentTheme: string
 }
 
-const theme = localStorage.getItem("theme") || "light"
+const theme = localStorage.getItem('app-theme') || "light"
 const initialState: Istate = {
     currentTheme: theme
 };

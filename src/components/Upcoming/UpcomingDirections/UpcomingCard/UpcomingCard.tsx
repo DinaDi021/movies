@@ -3,22 +3,22 @@ import {useDispatch} from "react-redux";
 
 import styles from './UpcomingCard.module.css'
 
-import {moviesActions} from "../../../redux";
+import {moviesActions} from "../../../../redux";
 import {FC, PropsWithChildren} from "react";
-import {IMovie} from "../../../interfaces";
+import {IMovie} from "../../../../interfaces";
 
 interface IProps extends PropsWithChildren {
-    upcomingMovie: IMovie
+    movie: IMovie
 }
-const UpcomingCard: FC<IProps> = ({upcomingMovie}) => {
+const UpcomingCard: FC<IProps> = ({movie}) => {
     const dispatch = useDispatch();
-    const {id, title, poster_path} = upcomingMovie;
+    const {id, title, poster_path} = movie;
     const baseURL = 'https://image.tmdb.org/t/p/';
     const imageSize = 'w500';
     const imageURL = baseURL + imageSize + poster_path;
 
     const handleMovieClick = () => {
-        dispatch(moviesActions.setSelectedMovie(upcomingMovie));
+        dispatch(moviesActions.setSelectedMovie(movie));
     };
 
     return (

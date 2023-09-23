@@ -31,7 +31,8 @@ const SortComponent = () => {
 
     return (
         <div className={styles.sortDiv}>
-            <FormControl fullWidth>
+            <FormControl
+                fullWidth>
                 <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
@@ -43,7 +44,7 @@ const SortComponent = () => {
                     <MenuItem value="without_sorting">Without sorting</MenuItem>
                     <MenuItem value="popularity.asc">Popularity <ArrowUpwardIcon></ArrowUpwardIcon> </MenuItem>
                     <MenuItem value="popularity.desc">Popularity <ArrowDownwardIcon></ArrowDownwardIcon></MenuItem>
-                    <MenuItem value="vote_average.asc">Vote Average <ArrowUpwardIcon></ArrowUpwardIcon></MenuItem>
+                    <MenuItem value="vote_average.asc"><span>Vote Average</span> <ArrowUpwardIcon></ArrowUpwardIcon></MenuItem>
                     <MenuItem value="vote_average.desc">Vote Average <ArrowDownwardIcon></ArrowDownwardIcon></MenuItem>
                     <MenuItem value="release_date.asc">Release Date <ArrowUpwardIcon></ArrowUpwardIcon></MenuItem>
                     <MenuItem value="release_date.desc">Release Date <ArrowDownwardIcon></ArrowDownwardIcon></MenuItem>

@@ -18,20 +18,20 @@ const Header = () => {
     return (
         <div className={styles.container}>
             <Link
-                style={{ color: pathname === '/movies' ? 'black' : 'white' }}
+                style={{ color: pathname === '/movies' ? 'var(--dark)' : 'var(--basic-white)' }}
                 to="/movies"
                 onClick={handleMoviesClick}
             >
                 Movies
             </Link>
             <Link
-                style={{ color: pathname === '/topRated' ? 'black' : 'white' }}
+                style={{ color: pathname === '/topRated' ? 'var(--dark)' : 'var(--basic-white)' }}
                 to="/topRated"
             >
                 TopRated
             </Link>
             <Link
-                style={{ color: pathname === '/search' ? 'black' : 'white' }}
+                style={{ color: pathname === '/search' ? 'var(--dark)' : 'var(--basic-white)' }}
                 to="/search"
                 onClick={handleMoviesClick}
             >

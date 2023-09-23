@@ -14,10 +14,10 @@
 
 
 html[data-theme='dark'] .activeButton {
-    background-color: #4c4c9f;
+    background-color: var(--turquoise);
 }
 
 html[data-theme='light'] .activeButton {
-    background-color: #8a8ad3;
+    background-color: var(--emerald);
 
 }

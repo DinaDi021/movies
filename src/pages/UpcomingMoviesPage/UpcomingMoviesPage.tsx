@@ -1,16 +1,16 @@
 import styles from '../MoviesPage/MoviesPage.module.css'
 
-import {Paginations, Popular, PopularPage} from "../../components";
+import {Paginations, Upcoming, UpcomingPage} from "../../components";
 import { useAppSelector} from "../../hooks";
 
-const PopularMoviesPage = () => {
+const UpcomingMoviesPage = () => {
     const {totalPages} = useAppSelector(state => state.categoriesMovies);
 
     return (
         <div className={styles.Container}>
             <div className={styles.MoviesPage}>
-                <Popular/>
-                <PopularPage/>
+                <Upcoming/>
+                <UpcomingPage/>
             </div>
             <div className={styles.Pagination}>
                 <Paginations totalPages={totalPages}/>
@@ -20,5 +20,5 @@ const PopularMoviesPage = () => {
 };
 
 export {
-    PopularMoviesPage
+    UpcomingMoviesPage
 };

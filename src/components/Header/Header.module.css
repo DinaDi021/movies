@@ -11,10 +11,10 @@
 }
 
 html[data-theme='light'] .container {
-    background-color: lavender;
+    background-color: var(--bright);
     border-bottom: 1px solid white;
 }
 
 html[data-theme='dark'] .container {
-    background-color: #30124d;
+    background-color: var(--darkGreen);
 }

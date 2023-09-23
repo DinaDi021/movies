@@ -7,10 +7,37 @@
     align-items: center;
 }
 
+.container h3{
+    margin: 0;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    margin: 10px;
+    padding: 0 20px;
+}
+
 html[data-theme='light'] .container {
-    background-color: lavender;
+    background-color: var(--bright);
 }
 
 html[data-theme='dark'] .container {
-    background-color: #30124d;
+    background-color: var(--darkGreen);
+}
+
+html[data-theme='light'] .container h3 {
+    color: var(--dark);
+    background-color: var(--basic-white);
+}
+
+html[data-theme='dark'] .container h3 {
+    color:  var(--bright);
+    background-color: var(--dark);
 }
