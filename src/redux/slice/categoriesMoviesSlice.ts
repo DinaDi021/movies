@@ -8,7 +8,7 @@ import {AxiosError} from "axios";
 interface IState {
     popularMovies: IMovie[],
     topRatedMovies: IMovie[],
-    upcomingMovies: IMovie[]
+    upcomingMovies: IMovie[],
     page: number,
     totalPages: number,
 }

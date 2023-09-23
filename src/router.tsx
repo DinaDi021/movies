@@ -1,6 +1,6 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
-import {MoviesPage, MoviePage, TopRatedPages, NotFoundPage, SearchPage} from "./pages";
+import {MoviesPage, MoviePage, TopRatedPages, NotFoundPage, SearchPage, PopularMoviesPage} from "./pages";
 import {MainLayout} from "./layout";
 
 const router = createBrowserRouter([
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: 'movie/:id/:type',
                 element: <MoviePage />
+            },
+            {
+                path: 'movies/popularMovies',
+                element: <PopularMoviesPage />
             },
             {
                 path: 'topRated',

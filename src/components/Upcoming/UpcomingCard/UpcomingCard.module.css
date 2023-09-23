@@ -22,6 +22,7 @@
     padding: 5px 20px;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 html[data-theme='light'] .container h3 {
@@ -56,4 +57,13 @@ html[data-theme='dark'] .container h4 {
 
 .UpcomingCard img{
     width: 10vw;
+}
+
+.PageContainer {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
