@@ -6,8 +6,11 @@ interface IProps extends PropsWithChildren {
 }
 const StarRating: FC<IProps> = ({ value }) => {
     return (
-        <Rating
-            value={value / 2}
+    <Rating
+        name="text-feedback"
+        value={value / 2}
+        readOnly
+        precision={0.5}
         />
     );
 };

@@ -31,15 +31,17 @@ const SortComponent = () => {
 
     return (
         <div className={styles.sortDiv}>
-            <FormControl
-                fullWidth>
-                <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+            <FormControl fullWidth sx={{ "& .MuiInputLabel-root": { color: "#005B64", "&.Mui-focused": { color: "#164044" } }, "& .MuiOutlinedInput-root": { "&.Mui-focused fieldset": { borderColor: "#005B64" } }, "& .MuiSelect-root": { color: "#005B64", "&:hover": { color: "#164044" } } }}>
+                <InputLabel htmlFor="my-select">
+                    Sort by
+                </InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     label="Sort by"
                     onChange={handleSortChange}
                     value={selectedSortBy || ""}
+                    sx={{color: "#005B64", "&:focus": { borderColor: "#005B64" }}}
                 >
                     <MenuItem value="without_sorting">Without sorting</MenuItem>
                     <MenuItem value="popularity.asc">Popularity <ArrowUpwardIcon></ArrowUpwardIcon> </MenuItem>
