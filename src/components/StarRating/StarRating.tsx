@@ -1,7 +1,7 @@
-import React, {FC, PropsWithChildren} from "react";
+import React, {FC} from "react";
 import {Rating} from "@mui/material";
 
-interface IProps extends PropsWithChildren {
+interface IProps  {
     value: number
 }
 const StarRating: FC<IProps> = ({ value }) => {

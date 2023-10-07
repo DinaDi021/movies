@@ -1,4 +1,14 @@
-import {configureStore} from "@reduxjs/toolkit";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
+
+import {
+    persistStore, persistReducer, FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 import {
     categoriesMoviesReducer,
@@ -9,18 +19,35 @@ import {
     searchMoviesReducer, themeReducer
 } from "./slice";
 
+const rootReducer = combineReducers({
+    movies: moviesReducer,
+    genres: genreReducer,
+    progress: progressReducer,
+    credits: creditsReducer,
+    searchMovies: searchMoviesReducer,
+    categoriesMovies: categoriesMoviesReducer,
+    themeSwitch: themeReducer
+})
+
+const persistConfig = {
+    key: 'persist-key',
+    storage,
+    whitelist: ['movies', 'credits', 'categoriesMovies', 'genres']
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
-    reducer: {
-        movies: moviesReducer,
-        genres: genreReducer,
-        progress: progressReducer,
-        credits: creditsReducer,
-        searchMovies: searchMoviesReducer,
-        categoriesMovies: categoriesMoviesReducer,
-        themeSwitch: themeReducer
-    }
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        }),
 });
+
+const persistor = persistStore(store)
 
 type RootState = ReturnType<typeof store.getState>
 type AppDispatch = typeof store.dispatch
@@ -31,5 +58,6 @@ export type {
 }
 
 export {
+    persistor,
     store
 }

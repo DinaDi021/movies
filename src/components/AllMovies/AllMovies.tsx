@@ -8,7 +8,7 @@ import {moviesActions} from "../../redux";
 import {AllMoviesContainer} from "./AllMoviesContainer/AllMoviesContainer";
 import {IsLoading} from "../IsLoading";
 import {QueryParams} from "../../interfaces";
-import {updateQueryParams} from "../../Utils";
+import {updateQueryParams} from "../../utils";
 
 const AllMovies = () => {
     const dispatch = useAppDispatch();

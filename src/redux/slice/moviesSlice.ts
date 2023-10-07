@@ -14,11 +14,10 @@ interface IState {
     totalPages: number,
 }
 
-const savedMovie = localStorage.getItem('selectedMovie');
 const initialState: IState = {
     movies: [],
     movieByid: null,
-    selectedMovie: savedMovie ? JSON.parse(savedMovie) : null,
+    selectedMovie: null,
     selectedSortBy: null,
     page: 1,
     totalPages: 0,
@@ -74,7 +73,6 @@ const moviesSlice = createSlice({
         },
         setSelectedMovie: (state, action) => {
             state.selectedMovie = action.payload;
-            localStorage.setItem('selectedMovie', JSON.stringify(action.payload));
         },
         setSortBy: (state, action) => {
             state.selectedSortBy = action.payload
