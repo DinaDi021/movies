@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {CircularProgress} from "@mui/material";
 
-const IsLoading = () => {
+const IsLoading: FC = () => {
     return (
         <div>
             <CircularProgress />

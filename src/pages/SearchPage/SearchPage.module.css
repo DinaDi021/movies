@@ -4,3 +4,9 @@
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 750px) {
+    .search{
+        height: 80vh;
+    }
+}

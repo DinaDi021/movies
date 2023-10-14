@@ -4,8 +4,9 @@ import styles from './GenreBadge.module.css'
 
 import {genreActions} from "../../../redux";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
+import {FC} from "react";
 
-const GenreFilter = () => {
+const GenreFilter: FC = () => {
     const dispatch = useAppDispatch();
     const {genres, selectedGenreId } = useAppSelector(state => state.genres);
     const [query, setQuery] = useSearchParams();

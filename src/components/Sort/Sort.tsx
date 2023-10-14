@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {FC, useEffect} from "react";
 import {useSearchParams} from "react-router-dom";
 
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
@@ -11,7 +11,7 @@ import {moviesActions} from "../../redux";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {SelectInputProps} from "@mui/material/Select/SelectInput";
 
-const SortComponent = () => {
+const SortComponent: FC = () => {
     const dispatch = useAppDispatch();
     const {selectedSortBy} = useAppSelector((state) => state.movies);
     const [query, setQuery] = useSearchParams();

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent, FC} from 'react';
 import {useSearchParams} from "react-router-dom";
 
 import {Pagination} from "@mui/material";
@@ -6,7 +6,7 @@ import {Pagination} from "@mui/material";
 interface PaginationsProps {
     totalPages: number;
 }
-const Paginations: React.FC<PaginationsProps> = ({totalPages}) => {
+const Paginations: FC<PaginationsProps> = ({totalPages}) => {
     const [query, setQuery] = useSearchParams()
     let currentPage = +query.get('page') || 1;
 
@@ -19,7 +19,7 @@ const Paginations: React.FC<PaginationsProps> = ({totalPages}) => {
     }
 
 
-    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
+    const handlePageChange = (event: ChangeEvent<unknown>, page: number) => {
         setQuery((prev) => {
             prev.set('page', page.toString());
             return prev;

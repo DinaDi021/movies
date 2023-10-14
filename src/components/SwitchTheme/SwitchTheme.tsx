@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
@@ -7,7 +7,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {themeActions} from "../../redux";
 
 
-const SwitchTheme = () => {
+const SwitchTheme: FC = () => {
     const dispatch = useAppDispatch();
     const {currentTheme} = useAppSelector(state => state.themeSwitch);
 
@@ -69,13 +69,13 @@ const SwitchTheme = () => {
     }));
 
         return (
-            <><FormControlLabel
+            <div><FormControlLabel
                 control={<MaterialUISwitch
                     sx={{ m: 1 }}
                     checked={currentTheme === "dark"}
                     onChange={toggleTheme}/>}
                 label=""/>
-            </>
+            </div>
         );
     }
 

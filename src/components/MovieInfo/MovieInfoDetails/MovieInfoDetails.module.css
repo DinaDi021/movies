@@ -4,6 +4,7 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .filmInfo {
@@ -48,3 +49,63 @@
     margin: 0;
 }
 
+@media screen and (min-width: 750px) and (max-width: 1250px){
+    .filmImg {
+        height: 50vh;
+    }
+
+    .containerVideo iframe{
+        width: 400px;
+    }
+
+    .GenreBadge {
+        width: 400px;
+    }
+
+    .filmInfo{
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+    .filmCard {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .filmImg{
+        margin-bottom: 20px;
+    }
+
+    .filmText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .containerVideo iframe{
+        width: 350px;
+    }
+
+    .filmInfo{
+        width: 100%;
+    }
+
+    .filmCard {
+        width: 90vw;
+        flex-direction: column;
+    }
+
+    .filmImg {
+        display: none;
+    }
+
+    .GenreBadge {
+        width: 350px;
+    }
+}

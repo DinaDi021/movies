@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
 
 import styles from '../AllMovies/AllMoviesContainer/AllMoviesContainer.module.css'
@@ -8,7 +8,7 @@ import {categoriesMoviesActions} from "../../redux";
 import {IsLoading} from "../IsLoading";
 import {AllMoviesContainer} from "../AllMovies";
 
-const TopRated = () => {
+const TopRated: FC = () => {
     const dispatch = useAppDispatch();
     const {isLoading} = useAppSelector(state => state.progress)
     const {topRatedMovies } = useAppSelector(state => state.categoriesMovies);

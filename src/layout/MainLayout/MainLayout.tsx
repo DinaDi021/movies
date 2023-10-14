@@ -9,17 +9,16 @@ import {Footer, Header, Sidebar} from "../../components";
 const MainLayout = () => {
     return (
         <div>
-            <div>
+            <>
                 <Header/>
-            </div>
+            </>
             <div className={styles.container}>
                 <Sidebar/>
                 <Outlet/>
             </div>
-            <div>
+            <>
                 <Footer/>
-            </div>
-
+            </>
         </div>
     );
 };

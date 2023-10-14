@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 
 import styles from "../../AllMovies/AllMoviesContainer/AllMoviesContainer.module.css";
 
 import {useAppSelector} from "../../../hooks";
 import {AllMoviesContainer} from "../../AllMovies";
 
-const UpcomingPage = () => {
+const UpcomingPage: FC = () => {
     const {upcomingMovies} = useAppSelector(state => state.categoriesMovies);
 
     return (

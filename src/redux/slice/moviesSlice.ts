@@ -31,7 +31,7 @@ const getMovies = createAsyncThunk<
     async ({query}, {rejectWithValue, dispatch}) => {
         try {
             dispatch(progressActions.setIsLoading(true))
-            const response = await moviesService.getAll(query.page, query.genreId, query.sorted);
+            const response = await moviesService.getAll(+query.page, query.genreId, query.sorted);
             const {page, total_pages, results} = response.data;
             dispatch(moviesActions.setTotalPages(total_pages));
             return {

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {ChangeEvent, FC, FormEventHandler, useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
 
 import {Divider, IconButton, InputBase, Pagination, Paper} from "@mui/material";
@@ -11,7 +11,7 @@ import {searchMoviesActions} from "../../redux";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {IsLoading} from "../IsLoading";
 
-const Search = () => {
+const Search: FC = () => {
     const dispatch = useAppDispatch();
     const {isLoading} = useAppSelector(state => state.progress)
     const {searchMovies, titleMovie, totalPages, titleMovieError} = useAppSelector(state => state.searchMovies);
@@ -28,11 +28,11 @@ const Search = () => {
     }, [dispatch, page, name]);
 
 
-    const handleSearchInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleSearchInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         dispatch(searchMoviesActions.setTitleMovie(e.target.value));
     };
 
-    const handleSearchSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    const handleSearchSubmit: FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
 
         if (!titleMovie) {
@@ -63,7 +63,7 @@ const Search = () => {
                 <div>
                     <Paper
                         component="form"
-                        sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
+                        sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 350}}
                         onSubmit={handleSearchSubmit}
                     >
                         <InputBase

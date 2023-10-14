@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {useAppSelector} from "../../../hooks";
 import styles from "./UpcomingCard/UpcomingCard.module.css";
 import {PopularCard} from "../../Popular";
 
-const UpcomingPreview = () => {
+const UpcomingPreview: FC = () => {
     const {upcomingMovies} = useAppSelector(state => state.categoriesMovies);
 
     return (

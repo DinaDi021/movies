@@ -22,7 +22,6 @@
 .image {
     width: 15vw;
     height: 40vh;
-    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -52,4 +51,23 @@
     border-radius: 10px;
     transition: transform 0.5s ease;
     transform: translateY(100%);
+}
+
+@media screen and (min-width: 750px) and (max-width: 1250px) {
+    .image{
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .container {
+        width: 45%;
+        margin: 10px;
+    }
+
+    .image{
+        width: 190px;
+        height: 290px;
+    }
 }

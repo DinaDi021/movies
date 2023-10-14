@@ -8,3 +8,9 @@
 .sortDiv  div{
     display: flex;
 }
+
+@media screen and (max-width: 750px) {
+    .sortDiv {
+        width: 50vw;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from '../MovieInfo/MovieInfoDetails/MovieInfoDetails.module.css'
@@ -6,7 +6,7 @@ import styles from '../MovieInfo/MovieInfoDetails/MovieInfoDetails.module.css'
 import {videoService} from "../../services";
 import {IVideo} from "../../interfaces";
 
-const PosterPreview = () => {
+const PosterPreview: FC = () => {
     const [videos, setVideos] =useState<IVideo[]>([]);
     const { id } = useParams();
 

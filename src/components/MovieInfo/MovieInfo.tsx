@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, {FC, useEffect} from "react";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {moviesActions} from "../../redux";
 import {IsLoading} from "../IsLoading";
 import {MovieInfoDetails} from "./MovieInfoDetails/MovieInfoDetails";
 
-const MovieInfo = () => {
+const MovieInfo: FC = () => {
     const dispatch = useAppDispatch();
     const {isLoading} = useAppSelector(state => state.progress)
     const {selectedMovie} = useAppSelector(state => state.movies);

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {SwitchTheme} from "../SwitchTheme";
 
-const Footer = () => {
+import styles from './Footer.module.css'
+
+const Footer: FC = () => {
     return (
-        <div>
+        <div className={styles.container}>
+            <SwitchTheme/>
         </div>
     );
 };

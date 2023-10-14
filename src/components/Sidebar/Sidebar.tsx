@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Link} from "react-router-dom";
 
 import styles from "./Sidebar.module.css";
@@ -6,7 +6,7 @@ import styles from "./Sidebar.module.css";
 import {Popular, PopularPreview} from "../Popular";
 import {Upcoming, UpcomingPreview} from "../Upcoming";
 
-const Sidebar = () => {
+const Sidebar: FC = () => {
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>

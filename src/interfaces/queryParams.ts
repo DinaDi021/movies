@@ -1,5 +1,5 @@
 export interface QueryParams {
-    page: number;
+    page: number | string;
     genreId?: string;
     sorted?: string ;
 }

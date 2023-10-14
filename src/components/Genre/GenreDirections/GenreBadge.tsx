@@ -4,8 +4,9 @@ import styles from '../../MovieInfo/MovieInfoDetails/MovieInfoDetails.module.css
 
 import {genreActions} from "../../../redux";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
+import {FC} from "react";
 
-const GenreBadge = () => {
+const GenreBadge: FC = () => {
     const dispatch = useAppDispatch();
     const {genres, selectedGenreId} = useAppSelector(state => state.genres);
     const {selectedMovie} = useAppSelector(state => state.movies)

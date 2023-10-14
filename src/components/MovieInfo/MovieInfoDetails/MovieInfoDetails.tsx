@@ -21,14 +21,16 @@ const MovieInfoDetails: FC<IProps> = ({selectedMovie}) => {
     return (
         <div className={styles.filmCard}>
             <div className={styles.filmInfo}>
-                <h2>{title}</h2>
-                <h2>Rating: {vote_average}
-                </h2>
-                <div>
-                    <h4>Overview:</h4>
-                    <p>{overview}</p>
+                <div className={styles.filmText}>
+                    <h2>{title}</h2>
+                    <h2>Rating: {vote_average}
+                    </h2>
+                    <div>
+                        <h4>Overview:</h4>
+                        <p>{overview}</p>
+                        <p><b>Release date:</b> {release_date}</p>
+                    </div>
                 </div>
-                <p><b>Release date:</b> {release_date}</p>
                 <Genre/>
                 <GenreBadge/>
                 <div>
@@ -41,8 +43,8 @@ const MovieInfoDetails: FC<IProps> = ({selectedMovie}) => {
                     <Cast/>
                 </div>
             </div>
-            <div>
-                <img className={styles.filmImg} src={poster_path? imageURL: empty} alt={title}/>
+            <div style={{padding: '0 10px'}}>
+                <img className={styles.filmImg} src={poster_path ? imageURL : empty} alt={title}/>
             </div>
 
         </div>

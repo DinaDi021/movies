@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 
 import {genreActions} from "../../redux";
 import {useAppDispatch} from "../../hooks";
 
-const Genre = () => {
+const Genre: FC = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {

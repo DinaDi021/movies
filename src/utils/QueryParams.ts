@@ -1,4 +1,6 @@
-export const updateQueryParams = (queryParams:any, setQuery:any, selectedGenreId: number, selectedSortBy:string) => {
+import {QueryParams} from "../interfaces";
+
+export const updateQueryParams = (queryParams: QueryParams, setQuery: any, selectedGenreId: number, selectedSortBy:string) => {
     queryParams = { ...queryParams, page: queryParams.page || '1' };
 
     if (selectedGenreId) {

@@ -4,6 +4,7 @@ import {RouterProvider} from "react-router-dom";
 import {PersistGate} from "redux-persist/integration/react";
 
 import './styles.scss'
+import './assets/fonts/Ubuntu-Regular.ttf'
 
 import {router} from "./router";
 import {Provider} from "react-redux";

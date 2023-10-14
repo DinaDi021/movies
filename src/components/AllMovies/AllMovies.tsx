@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
 
 import styles from './AllMoviesContainer/AllMoviesContainer.module.css'
@@ -10,7 +10,7 @@ import {IsLoading} from "../IsLoading";
 import {QueryParams} from "../../interfaces";
 import {updateQueryParams} from "../../utils";
 
-const AllMovies = () => {
+const AllMovies: FC = () => {
     const dispatch = useAppDispatch();
     const {isLoading} = useAppSelector(state => state.progress)
     const {movies, selectedSortBy} = useAppSelector(state => state.movies);
@@ -29,7 +29,7 @@ const AllMovies = () => {
 
 
     return (
-        <div>
+        <>
             {isLoading ? (
                 <IsLoading />
             ) : (
@@ -39,7 +39,7 @@ const AllMovies = () => {
                     ))}
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

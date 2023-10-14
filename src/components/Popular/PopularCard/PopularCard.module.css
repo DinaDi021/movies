@@ -37,3 +37,14 @@ html[data-theme='dark'] .container h4 {
 .UpcomingCard img{
     width: 10vw;
 }
+
+@media screen and (min-width: 750px) and (max-width: 1250px) {
+    .UpcomingCard h4{
+        margin: 8px 0;
+        font-size: 12px;
+    }
+
+    .UpcomingCard img{
+        width: 8vw;
+    }
+}

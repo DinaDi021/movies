@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {FC, useEffect} from "react";
 
 import styles from './CastDetails/CastDetails.module.css'
 
@@ -6,7 +6,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {creditsActions} from "../../redux";
 import {CastDetails} from "./CastDetails/CastDetails";
 
-const Cast = () => {
+const Cast: FC = () => {
     const dispatch = useAppDispatch();
     const {cast} = useAppSelector(state => state.credits)
     const {selectedMovie} = useAppSelector(state => state.movies)

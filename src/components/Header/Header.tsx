@@ -1,12 +1,14 @@
 import {Link} from "react-router-dom";
+import {FC} from "react";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 import styles from './Header.module.css'
 
-import {useAppDispatch, useAppLocation} from "../../hooks";
+import {useAppDispatch, useAppLocation, useToggle} from "../../hooks";
 import {genreActions, moviesActions, searchMoviesActions} from "../../redux";
-import {SwitchTheme} from "../SwitchTheme";
 
-const Header = () => {
+const Header: FC = () => {
     const dispatch = useAppDispatch();
     const {pathname} = useAppLocation()
     const handleMoviesClick = () => {
@@ -15,30 +17,39 @@ const Header = () => {
         dispatch(searchMoviesActions.clearSearchMovies())
     };
 
+    const {value, change} = useToggle(true);
+
+    const linksClassName = value ? styles.links : styles.linksMobile;
+
+    const menuButtonIcon = value ? <MenuIcon className={styles.menuIcon} /> : <CloseIcon className={styles.closeIcon} />
+
     return (
         <div className={styles.container}>
-            <Link
-                style={{ color: pathname === '/movies' ? 'var(--dark)' : 'var(--basic-white)' }}
-                to="/movies"
-                onClick={handleMoviesClick}
-            >
-                Movies
-            </Link>
-            <Link
-                style={{ color: pathname === '/topRated' ? 'var(--dark)' : 'var(--basic-white)' }}
-                to="/topRated"
-            >
-                TopRated
-            </Link>
-            <Link
-                style={{ color: pathname === '/search' ? 'var(--dark)' : 'var(--basic-white)' }}
-                to="/search"
-                onClick={handleMoviesClick}
-            >
-                Search
-            </Link>
-            <SwitchTheme/>
-            {/*<UserInfo/>*/}
+            <button className={styles.menuButton} onClick={change}>
+                {menuButtonIcon}
+            </button>
+            <div className={linksClassName}>
+                <Link className={styles.link}
+                      style={{color: pathname === '/movies' ? 'var(--dark)' : 'var(--basic-white)'}}
+                      to="/movies"
+                      onClick={handleMoviesClick}
+                >
+                    Movies
+                </Link>
+                <Link className={styles.link}
+                      style={{color: pathname === '/topRated' ? 'var(--dark)' : 'var(--basic-white)'}}
+                      to="/topRated"
+                >
+                    TopRated
+                </Link>
+                <Link className={styles.link}
+                      style={{color: pathname === '/search' ? 'var(--dark)' : 'var(--basic-white)'}}
+                      to="/search"
+                      onClick={handleMoviesClick}
+                >
+                    Search
+                </Link>
+            </div>
         </div>
     );
 };

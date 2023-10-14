@@ -41,3 +41,20 @@ html[data-theme='dark'] .container h3 {
     color:  var(--bright);
     background-color: var(--dark);
 }
+
+@media screen and (min-width: 750px) and (max-width: 1250px) {
+    .container h3{
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
+    .wrapper{
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+.container{
+    display: none;
+}
+}
