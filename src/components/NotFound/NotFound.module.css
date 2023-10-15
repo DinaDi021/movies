@@ -27,6 +27,10 @@ h1{
     transition: transform 0.6s ease, background 0.6s ease, color 0.6s ease;
 }
 
+.linkHome > h2 {
+    border: 5px solid var(--darkGreen);
+}
+
 .linkHome::before {
     content: '';
     position: absolute;
