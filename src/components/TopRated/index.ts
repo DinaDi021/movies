@@ -1,1 +1,1 @@
-export * from './TopRated'
+export * from "./TopRated";

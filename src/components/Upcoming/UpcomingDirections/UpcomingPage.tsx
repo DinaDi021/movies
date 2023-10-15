@@ -1,22 +1,21 @@
-import React, {FC} from 'react';
+import React, { FC } from "react";
 
+import { useAppSelector } from "../../../hooks";
+import { AllMoviesContainer } from "../../AllMovies";
 import styles from "../../AllMovies/AllMoviesContainer/AllMoviesContainer.module.css";
 
-import {useAppSelector} from "../../../hooks";
-import {AllMoviesContainer} from "../../AllMovies";
-
 const UpcomingPage: FC = () => {
-    const {upcomingMovies} = useAppSelector(state => state.categoriesMovies);
+  const { upcomingMovies } = useAppSelector((state) => state.categoriesMovies);
 
-    return (
-        <div>
-            <div className={styles.wrapper}>
-                {upcomingMovies.map((movie) => (
-                    <AllMoviesContainer key={movie.id} movie={movie}/>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div className={styles.wrapper}>
+        {upcomingMovies.map((movie) => (
+          <AllMoviesContainer key={movie.id} movie={movie} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export {UpcomingPage};
+export { UpcomingPage };

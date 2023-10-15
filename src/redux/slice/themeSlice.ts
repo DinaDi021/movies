@@ -1,26 +1,23 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-interface Istate{
-    currentTheme: string
+interface Istate {
+  currentTheme: string;
 }
 
-const theme = localStorage.getItem('app-theme') || "light"
+const theme = localStorage.getItem("app-theme") || "light";
 const initialState: Istate = {
-    currentTheme: theme
+  currentTheme: theme,
 };
 const themeslice = createSlice({
-    name: 'themeSlice',
-    initialState,
-    reducers: {
-        setTheme: (state, action) => {
-            state.currentTheme = action.payload
-        }
-    }
+  name: "themeSlice",
+  initialState,
+  reducers: {
+    setTheme: (state, action) => {
+      state.currentTheme = action.payload;
+    },
+  },
 });
 
-const {reducer: themeReducer, actions: themeActions} = themeslice;
+const { reducer: themeReducer, actions: themeActions } = themeslice;
 
-export {
-    themeActions,
-    themeReducer
-}
+export { themeActions, themeReducer };

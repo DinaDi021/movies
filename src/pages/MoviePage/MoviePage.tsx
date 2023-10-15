@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import {MovieInfo} from "../../components";
+import { MovieInfo } from "../../components";
 
 const MoviePage = () => {
-    return (
-        <div>
-            <MovieInfo/>
-        </div>
-    );
+  return (
+    <div>
+      <MovieInfo />
+    </div>
+  );
 };
 
-export {MoviePage};
+export { MoviePage };

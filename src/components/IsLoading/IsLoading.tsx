@@ -1,12 +1,12 @@
-import React, {FC} from 'react';
-import {CircularProgress} from "@mui/material";
+import { CircularProgress } from "@mui/material";
+import React, { FC } from "react";
 
 const IsLoading: FC = () => {
-    return (
-        <div>
-            <CircularProgress />
-        </div>
-    );
+  return (
+    <div>
+      <CircularProgress />
+    </div>
+  );
 };
 
-export {IsLoading};
+export { IsLoading };

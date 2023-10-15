@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const useToggle = (defaultValue: boolean) => {
-    const [value, setValue] = useState<boolean>(defaultValue);
+  const [value, setValue] = useState<boolean>(defaultValue);
 
-    const change = () => {
-        setValue((prev) => !prev);
-    };
+  const change = () => {
+    setValue((prev) => !prev);
+  };
 
-    return { value, change };
+  return { value, change };
 };
 
 export { useToggle };

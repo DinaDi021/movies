@@ -1,25 +1,22 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-interface Istate{
-    isLoading: boolean
+interface Istate {
+  isLoading: boolean;
 }
 
 const initialState: Istate = {
-    isLoading: false
+  isLoading: false,
 };
 const progressSlice = createSlice({
-    name: 'progressSlice',
-    initialState,
-    reducers: {
-        setIsLoading: (state, action) => {
-            state.isLoading = action.payload
-        }
-    }
+  name: "progressSlice",
+  initialState,
+  reducers: {
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
+  },
 });
 
-const {reducer: progressReducer, actions: progressActions} = progressSlice;
+const { reducer: progressReducer, actions: progressActions } = progressSlice;
 
-export {
-    progressActions,
-    progressReducer
-}
+export { progressActions, progressReducer };

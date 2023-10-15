@@ -1,19 +1,16 @@
-import React, {FC, useEffect} from 'react';
+import React, { FC, useEffect } from "react";
 
-import {genreActions} from "../../redux";
-import {useAppDispatch} from "../../hooks";
+import { useAppDispatch } from "../../hooks";
+import { genreActions } from "../../redux";
 
 const Genre: FC = () => {
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(genreActions.getGenre())
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(genreActions.getGenre());
+  }, [dispatch]);
 
-    return (
-        <>
-        </>
-    );
+  return <></>;
 };
 
-export {Genre};
+export { Genre };

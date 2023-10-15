@@ -1,26 +1,24 @@
-import React from 'react';
-import {Outlet} from "react-router-dom";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-import styles from './MainLayout.module.css'
-
-import {Footer, Header, Sidebar} from "../../components";
-
+import { Footer, Header, Sidebar } from "../../components";
+import styles from "./MainLayout.module.css";
 
 const MainLayout = () => {
-    return (
-        <div>
-            <>
-                <Header/>
-            </>
-            <div className={styles.container}>
-                <Sidebar/>
-                <Outlet/>
-            </div>
-            <>
-                <Footer/>
-            </>
-        </div>
-    );
+  return (
+    <div>
+      <>
+        <Header />
+      </>
+      <div className={styles.container}>
+        <Sidebar />
+        <Outlet />
+      </div>
+      <>
+        <Footer />
+      </>
+    </div>
+  );
 };
 
-export {MainLayout};
+export { MainLayout };

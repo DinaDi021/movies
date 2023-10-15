@@ -1,14 +1,12 @@
-import {IMovie, IPagination, IRes} from "../interfaces";
-import {apiService} from "./apiService";
-import {urls} from "../constants";
+import { urls } from "../constants";
+import { IMovie, IPagination, IRes } from "../interfaces";
+import { apiService } from "./apiService";
 
 const searchService = {
-    getAll: (query: string, page: number): IRes<IPagination<IMovie>> => apiService.get(urls.search, {
-        params:
-            {query, page}
-    })
-}
+  getAll: (query: string, page: number): IRes<IPagination<IMovie>> =>
+    apiService.get(urls.search, {
+      params: { query, page },
+    }),
+};
 
-export {
-    searchService
-}
+export { searchService };

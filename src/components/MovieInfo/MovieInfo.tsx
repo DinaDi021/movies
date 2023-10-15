@@ -1,32 +1,32 @@
-import React, {FC, useEffect} from "react";
+import React, { FC, useEffect } from "react";
 
-import {useAppDispatch, useAppSelector} from "../../hooks";
-import {moviesActions} from "../../redux";
-import {IsLoading} from "../IsLoading";
-import {MovieInfoDetails} from "./MovieInfoDetails/MovieInfoDetails";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { moviesActions } from "../../redux";
+import { IsLoading } from "../IsLoading";
+import { MovieInfoDetails } from "./MovieInfoDetails/MovieInfoDetails";
 
 const MovieInfo: FC = () => {
-    const dispatch = useAppDispatch();
-    const {isLoading} = useAppSelector(state => state.progress)
-    const {selectedMovie} = useAppSelector(state => state.movies);
+  const dispatch = useAppDispatch();
+  const { isLoading } = useAppSelector((state) => state.progress);
+  const { selectedMovie } = useAppSelector((state) => state.movies);
 
-    useEffect(() => {
-        if (selectedMovie) {
-            dispatch(moviesActions.getMovieById({id: selectedMovie.id}));
-        }
-    }, [dispatch, selectedMovie]);
+  useEffect(() => {
+    if (selectedMovie) {
+      dispatch(moviesActions.getMovieById({ id: selectedMovie.id }));
+    }
+  }, [dispatch, selectedMovie]);
 
-    return (
+  return (
+    <div>
+      {isLoading ? (
+        <IsLoading />
+      ) : (
         <div>
-            {isLoading ? (
-                <IsLoading />
-            ) : (
-                <div>
-                    {selectedMovie && <MovieInfoDetails selectedMovie={selectedMovie} />}
-                </div>
-            )}
+          {selectedMovie && <MovieInfoDetails selectedMovie={selectedMovie} />}
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
-export {MovieInfo};
+export { MovieInfo };

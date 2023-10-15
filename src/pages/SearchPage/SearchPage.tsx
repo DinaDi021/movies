@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import styles from './SearchPage.module.css'
-import {Search} from "../../components";
+import { Search } from "../../components";
+import styles from "./SearchPage.module.css";
 
 const SearchPage = () => {
-    return (
-        <div className={styles.search}>
-            <Search/>
-        </div>
-    );
+  return (
+    <div className={styles.search}>
+      <Search />
+    </div>
+  );
 };
 
-export {SearchPage};
+export { SearchPage };

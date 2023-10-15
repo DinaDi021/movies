@@ -1,2 +1,2 @@
-export * from './Sort'
-export * from './Sort.module.css'
+export * from "./Sort";
+export * from "./Sort.module.css";

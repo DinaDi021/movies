@@ -1,11 +1,9 @@
-import {useLocation, Location} from "react-router-dom";
+import { Location, useLocation } from "react-router-dom";
 
 interface IState<STATE> extends Location {
-    state: STATE
+  state: STATE;
 }
 
-const useAppLocation = <T>(): IState<T> => useLocation()
+const useAppLocation = <T>(): IState<T> => useLocation();
 
-export {
-    useAppLocation
-}
+export { useAppLocation };
