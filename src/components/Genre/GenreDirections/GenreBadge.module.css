@@ -33,21 +33,18 @@ html[data-theme='light'] .activeButton {
 
 @media screen and (max-width: 750px) {
     .container{
-        height: 50vh;
-    }
-
-    .container button {
-        width: 35%;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .container{
         height: fit-content;
     }
 
     .container button {
-        width: 80%;
+        width: 35%;
         margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container button {
+        width: 80%;
+
     }
 }
