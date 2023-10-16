@@ -40,3 +40,14 @@ html[data-theme='light'] .activeButton {
         width: 35%;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .container{
+        height: fit-content;
+    }
+
+    .container button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}

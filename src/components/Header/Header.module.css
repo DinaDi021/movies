@@ -34,7 +34,7 @@ html[data-theme='dark'] .container {
 @media screen and (max-width: 750px) {
     .container {
         justify-content: flex-start;
-        height: 50px;
+        height: 60px;
     }
 
     .menuButton {
@@ -54,5 +54,17 @@ html[data-theme='dark'] .container {
         width: 80%;
         display: flex;
         justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .linksMobile {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .linksMobile a {
+        margin: 0 10px 5px 0;
     }
 }

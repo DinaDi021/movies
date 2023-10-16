@@ -109,3 +109,13 @@
         width: 350px;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .containerVideo iframe{
+        width: 250px;
+    }
+
+    .GenreBadge{
+        width: 250px;
+    }
+}
