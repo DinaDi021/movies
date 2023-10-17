@@ -25,5 +25,15 @@
 @media screen and (max-width: 750px) {
     .container {
         justify-content: center;
+
+    }
+    .actorImg{
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 460px) and (max-width: 750px){
+    .actorImg{
+        margin: 0;
     }
 }
