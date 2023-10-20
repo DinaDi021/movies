@@ -8,10 +8,10 @@ const TopRatedPages = () => {
   const { totalPages } = useAppSelector((state) => state.categoriesMovies);
 
   return (
-    <div>
-      <div>
+    <div className={styles.TopRatedPages}>
+      <>
         <TopRated />
-      </div>
+      </>
       <div className={styles.Pagination}>
         <Paginations totalPages={totalPages} />
       </div>

@@ -19,7 +19,7 @@ const TopRated: FC = () => {
   }, [dispatch, page]);
 
   return (
-    <div>
+    <>
       {isLoading ? (
         <IsLoading />
       ) : (
@@ -29,7 +29,7 @@ const TopRated: FC = () => {
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

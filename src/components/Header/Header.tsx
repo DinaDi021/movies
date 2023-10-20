@@ -19,6 +19,7 @@ const Header: FC = () => {
   const { value, change } = useToggle(true);
 
   const linksClassName = value ? styles.links : styles.linksMobile;
+  const containerClassName = value ? styles.container : styles.containerMobile;
 
   const menuButtonIcon = value ? (
     <MenuIcon className={styles.menuIcon} />
@@ -26,8 +27,15 @@ const Header: FC = () => {
     <CloseIcon className={styles.closeIcon} />
   );
 
+  const handleLinkClick = () => {
+    handleMoviesClick();
+    if (containerClassName === styles.containerMobile) {
+      change();
+    }
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={containerClassName}>
       <button className={styles.menuButton} onClick={change}>
         {menuButtonIcon}
       </button>
@@ -39,7 +47,7 @@ const Header: FC = () => {
               pathname === "/movies" ? "var(--dark)" : "var(--basic-white)",
           }}
           to="/movies"
-          onClick={handleMoviesClick}
+          onClick={handleLinkClick}
         >
           Movies
         </Link>
@@ -50,6 +58,7 @@ const Header: FC = () => {
               pathname === "/topRated" ? "var(--dark)" : "var(--basic-white)",
           }}
           to="/topRated"
+          onClick={handleLinkClick}
         >
           TopRated
         </Link>
@@ -64,7 +73,7 @@ const Header: FC = () => {
                     : "var(--basic-white)",
               }}
               to="/movies/popular"
-              onClick={handleMoviesClick}
+              onClick={handleLinkClick}
             >
               Popular
             </Link>
@@ -77,7 +86,7 @@ const Header: FC = () => {
                     : "var(--basic-white)",
               }}
               to="/movies/upcoming"
-              onClick={handleMoviesClick}
+              onClick={handleLinkClick}
             >
               Released soon
             </Link>
@@ -90,7 +99,7 @@ const Header: FC = () => {
               pathname === "/search" ? "var(--dark)" : "var(--basic-white)",
           }}
           to="/search"
-          onClick={handleMoviesClick}
+          onClick={handleLinkClick}
         >
           Search
         </Link>
